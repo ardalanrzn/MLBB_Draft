@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+<title>Draft Fast — Rank Draft Helper</title>
+<meta name="theme-color" content="#0b0e17" />
+<meta name="description" content="Fast tap-based ban/pick draft tool for ranked matches." />
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="app-header">
+  <div class="brand">Draft<span>Fast</span></div>
+  <button id="side-toggle" class="side-toggle blue">Playing: Blue Team</button>
+</header>
+
+<section class="draft-status">
+  <div id="turn-banner" class="turn-banner">Loading…</div>
+  <div class="timer-wrap">
+    <svg class="timer-svg" viewBox="0 0 60 60">
+      <circle class="timer-track" cx="30" cy="30" r="26"></circle>
+      <circle id="timer-ring" class="timer-progress" cx="30" cy="30" r="26"></circle>
+    </svg>
+    <div id="timer" class="timer-num">--</div>
+  </div>
+</section>
+
+<section id="ban-strip" class="ban-strip"></section>
+
+<section class="team-slots">
+  <div class="team-column blue">
+    <div class="team-label">BLUE</div>
+    <div id="slots-blue" class="slots"></div>
+  </div>
+  <div class="team-column red">
+    <div class="team-label">RED</div>
+    <div id="slots-red" class="slots"></div>
+  </div>
+</section>
+
+<section class="suggestions-section">
+  <div class="section-title">Suggested for this turn</div>
+  <div id="suggestion-list" class="suggestion-list"></div>
+</section>
+
+<section class="controls">
+  <input id="search-input" type="search" placeholder="Search hero…" autocomplete="off" />
+  <div id="role-filters" class="chip-row"></div>
+  <div id="lane-filters" class="chip-row"></div>
+</section>
+
+<main id="hero-grid" class="hero-grid"></main>
+
+<footer class="app-footer">
+  <button id="skip-btn" class="footer-btn">Skip Turn</button>
+  <button id="undo-btn" class="footer-btn" disabled>Undo</button>
+  <button id="reset-btn" class="footer-btn danger">Reset</button>
+</footer>
+
+<script src="heroes.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
